@@ -1,0 +1,47 @@
+﻿version: "3.8"
+
+services:
+
+  neo4j:
+    image: neo4j:5-community
+    container_name: salesiq_neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/salesiq_password_2024
+      NEO4J_dbms_memory_heap_initial__size: 256m
+      NEO4J_dbms_memory_heap_max__size: 512m
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:7474"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  salesiq:
+    build: .
+    container_name: salesiq_app
+    ports:
+      - "8000:8000"
+    environment:
+      SALESIQ_GRAPH_BACKEND: neo4j
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: salesiq_password_2024
+      SALESIQ_LLM_PROVIDER: groq
+    env_file:
+      - .env
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  neo4j_data:
+  neo4j_logs:

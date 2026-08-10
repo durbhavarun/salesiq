@@ -1,0 +1,39 @@
+﻿# Secret files — NEVER upload these
+.env
+*.env
+salesiq-keys.txt
+
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Runtime state files (auto-created by the app)
+data/demo/icp_state.json
+data/demo/scores_state.json
+data/demo/audit_log.json
+
+# Test output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
