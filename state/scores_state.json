@@ -1,0 +1,2675 @@
+{
+  "acc_201": {
+    "account_id": "acc_201",
+    "company_name": "LeadCo_201",
+    "score": 56.3,
+    "raw_score": 56.3,
+    "icp_fit": 61.6,
+    "intent_score": 43.93,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 3 signals, show +/-10 uncertainty",
+    "fit_category": "Partial Fit",
+    "recommended_action": "Nurture",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Leadership Change: stable",
+        "weight": 0.94,
+        "evidence": "leadership_change observed for acc_201",
+        "source": "sig_002",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Expansion Announcement: strong",
+        "weight": 0.82,
+        "evidence": "expansion_announcement observed for acc_201",
+        "source": "sig_003",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Leadership Change: strong",
+        "weight": 0.72,
+        "evidence": "leadership_change observed for acc_201",
+        "source": "sig_001",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Industry: Manufacturing",
+        "weight": 0.226,
+        "evidence": "weight=+0.2260 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "industry",
+        "value": "Manufacturing"
+      },
+      {
+        "factor": "Referral Source Quality: high",
+        "weight": 0.1919,
+        "evidence": "weight=+0.1919 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "high"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      }
+    ],
+    "gaps": [
+      "Geography: Midwest (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Credit Rating: BB (negative indicator)",
+      "Equipment Purchase Signal: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.383241Z",
+    "signal_count": 3,
+    "avg_signal_confidence": 0.827,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_202": {
+    "account_id": "acc_202",
+    "company_name": "LeadCo_202",
+    "score": 51.27,
+    "raw_score": 51.27,
+    "icp_fit": 50.32,
+    "intent_score": 53.5,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Partial Fit",
+    "recommended_action": "Nurture",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Leadership Change: positive",
+        "weight": 0.9,
+        "evidence": "leadership_change observed for acc_202",
+        "source": "sig_004",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Expansion Announcement: strong",
+        "weight": 0.8,
+        "evidence": "expansion_announcement observed for acc_202",
+        "source": "sig_005",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Industry: Healthcare",
+        "weight": 0.1667,
+        "evidence": "weight=+0.1667 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "industry",
+        "value": "Healthcare"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Referral Source Quality: low",
+        "weight": 0.0682,
+        "evidence": "weight=+0.0682 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "low"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      }
+    ],
+    "gaps": [
+      "Geography: Southwest (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Credit Rating: B (negative indicator)",
+      "Loan Purpose: expansion (negative indicator)",
+      "Loan Amount Band: under_1m (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.383444Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.85,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_203": {
+    "account_id": "acc_203",
+    "company_name": "LeadCo_203",
+    "score": 50.42,
+    "raw_score": 50.42,
+    "icp_fit": 63.03,
+    "intent_score": 21.0,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Partial Fit",
+    "recommended_action": "Nurture",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Leadership Change: stable",
+        "weight": 0.71,
+        "evidence": "leadership_change observed for acc_203",
+        "source": "sig_007",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Leadership Change: improving",
+        "weight": 0.69,
+        "evidence": "leadership_change observed for acc_203",
+        "source": "sig_006",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Industry: Manufacturing",
+        "weight": 0.226,
+        "evidence": "weight=+0.2260 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "industry",
+        "value": "Manufacturing"
+      },
+      {
+        "factor": "Loan Purpose: equipment_financing",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "equipment_financing"
+      },
+      {
+        "factor": "Equipment Purchase Signal: yes",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "equipment_purchase_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Loan Amount Band: 5m_20m",
+        "weight": 0.0795,
+        "evidence": "weight=+0.0795 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_amount_band",
+        "value": "5m_20m"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Existing Banking Relationship: no (negative indicator)",
+      "New Contract Signal: no (negative indicator)",
+      "Prior Deal With Bank: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.383598Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.7,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_204": {
+    "account_id": "acc_204",
+    "company_name": "LeadCo_204",
+    "score": 21.92,
+    "raw_score": 21.92,
+    "icp_fit": 25.96,
+    "intent_score": 12.5,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Credit Rating Change: strong",
+        "weight": 0.86,
+        "evidence": "credit_rating_change observed for acc_204",
+        "source": "sig_008",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Equipment Purchase: positive",
+        "weight": 0.68,
+        "evidence": "equipment_purchase observed for acc_204",
+        "source": "sig_009",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Geography: Southeast",
+        "weight": 0.0947,
+        "evidence": "weight=+0.0947 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "Southeast"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Referral Source Quality: low",
+        "weight": 0.0682,
+        "evidence": "weight=+0.0682 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "low"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Years Band: mature",
+        "weight": 0.0379,
+        "evidence": "weight=+0.0379 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "years_band",
+        "value": "mature"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Business Model: B2B (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "Credit Rating: B (negative indicator)",
+      "Collateral Type: receivables (negative indicator)",
+      "Loan Purpose: working_capital (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.383734Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.77,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_205": {
+    "account_id": "acc_205",
+    "company_name": "LeadCo_205",
+    "error": "Scoring blocked \u2014 ERROR anomaly detected",
+    "anomalies": [
+      {
+        "rule": "impossible_financial_value",
+        "severity": "ERROR",
+        "message": "dscr=-0.5 is negative (physically impossible). Cannot produce a meaningful score from invalid financial data.",
+        "affected_field": "dscr"
+      }
+    ],
+    "score": null,
+    "anomaly_flag": true
+  },
+  "acc_206": {
+    "account_id": "acc_206",
+    "company_name": "LeadCo_206",
+    "score": 32.81,
+    "raw_score": 32.81,
+    "icp_fit": 31.71,
+    "intent_score": 35.38,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 4 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Credit Rating Change: stable",
+        "weight": 0.84,
+        "evidence": "credit_rating_change observed for acc_206",
+        "source": "sig_016",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Expansion Announcement: strong",
+        "weight": 0.82,
+        "evidence": "expansion_announcement observed for acc_206",
+        "source": "sig_014",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Ma Activity: positive",
+        "weight": 0.73,
+        "evidence": "ma_activity observed for acc_206",
+        "source": "sig_017",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Expansion Announcement: stable",
+        "weight": 0.65,
+        "evidence": "expansion_announcement observed for acc_206",
+        "source": "sig_015",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Collateral Type: equipment",
+        "weight": 0.3295,
+        "evidence": "weight=+0.3295 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "equipment"
+      },
+      {
+        "factor": "Dscr Band: adequate",
+        "weight": 0.1376,
+        "evidence": "weight=+0.1376 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "adequate"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      },
+      {
+        "factor": "New Contract Signal: yes",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "new_contract_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Referral Source Quality: low",
+        "weight": 0.0682,
+        "evidence": "weight=+0.0682 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "low"
+      }
+    ],
+    "gaps": [
+      "Industry: Logistics (negative indicator)",
+      "Company Stage: startup (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Loan Amount Band: under_1m (negative indicator)",
+      "Existing Banking Relationship: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.383918Z",
+    "signal_count": 4,
+    "avg_signal_confidence": 0.76,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_207": {
+    "account_id": "acc_207",
+    "company_name": "LeadCo_207",
+    "score": 43.09,
+    "raw_score": 43.09,
+    "icp_fit": 36.17,
+    "intent_score": 59.25,
+    "confidence": "HIGH",
+    "confidence_note": "HIGH confidence \u2014 4 signals, avg conf 0.815",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Ma Activity: improving",
+        "weight": 0.93,
+        "evidence": "ma_activity observed for acc_207",
+        "source": "sig_020",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Ma Activity: positive",
+        "weight": 0.85,
+        "evidence": "ma_activity observed for acc_207",
+        "source": "sig_018",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Expansion Announcement: improving",
+        "weight": 0.81,
+        "evidence": "expansion_announcement observed for acc_207",
+        "source": "sig_019",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Equipment Purchase: positive",
+        "weight": 0.67,
+        "evidence": "equipment_purchase observed for acc_207",
+        "source": "sig_021",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Loan Purpose: equipment_financing",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "equipment_financing"
+      },
+      {
+        "factor": "Equipment Purchase Signal: yes",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "equipment_purchase_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Loan Amount Band: 5m_20m",
+        "weight": 0.0795,
+        "evidence": "weight=+0.0795 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_amount_band",
+        "value": "5m_20m"
+      }
+    ],
+    "gaps": [
+      "Employee Band: 201-500 (negative indicator)",
+      "Geography: Midwest (negative indicator)",
+      "Company Stage: growth (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Dscr Band: low (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384033Z",
+    "signal_count": 4,
+    "avg_signal_confidence": 0.815,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_208": {
+    "account_id": "acc_208",
+    "company_name": "LeadCo_208",
+    "score": 14.87,
+    "raw_score": 14.87,
+    "icp_fit": 15.88,
+    "intent_score": 12.5,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Credit Rating Change: stable",
+        "weight": 0.94,
+        "evidence": "credit_rating_change observed for acc_208",
+        "source": "sig_023",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Credit Rating Change: positive",
+        "weight": 0.72,
+        "evidence": "credit_rating_change observed for acc_208",
+        "source": "sig_022",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Collateral Type: equipment",
+        "weight": 0.3295,
+        "evidence": "weight=+0.3295 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "equipment"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Expansion Signal: no",
+        "weight": 0.0215,
+        "evidence": "weight=+0.0215 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "expansion_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Loan Amount Band: over_20m",
+        "weight": 0.0101,
+        "evidence": "weight=+0.0101 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_amount_band",
+        "value": "over_20m"
+      }
+    ],
+    "gaps": [
+      "Employee Band: 201-500 (negative indicator)",
+      "Geography: Midwest (negative indicator)",
+      "Company Stage: growth (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "Credit Rating: B (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384141Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.83,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_209": {
+    "account_id": "acc_209",
+    "company_name": "LeadCo_209",
+    "score": 51.16,
+    "raw_score": 51.16,
+    "icp_fit": 43.09,
+    "intent_score": 70.0,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Partial Fit",
+    "recommended_action": "Nurture",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Expansion Announcement: improving",
+        "weight": 0.71,
+        "evidence": "expansion_announcement observed for acc_209",
+        "source": "sig_024",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Expansion Announcement: strong",
+        "weight": 0.69,
+        "evidence": "expansion_announcement observed for acc_209",
+        "source": "sig_025",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Referral Source Quality: high",
+        "weight": 0.1919,
+        "evidence": "weight=+0.1919 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "high"
+      },
+      {
+        "factor": "Geography: Southeast",
+        "weight": 0.0947,
+        "evidence": "weight=+0.0947 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "Southeast"
+      },
+      {
+        "factor": "Loan Amount Band: 5m_20m",
+        "weight": 0.0795,
+        "evidence": "weight=+0.0795 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_amount_band",
+        "value": "5m_20m"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Credit Rating: BBB",
+        "weight": 0.0518,
+        "evidence": "weight=+0.0518 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "BBB"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      }
+    ],
+    "gaps": [
+      "Business Model: B2B (negative indicator)",
+      "Collateral Type: receivables (negative indicator)",
+      "Years Band: established (negative indicator)",
+      "Loan Purpose: working_capital (negative indicator)",
+      "Existing Banking Relationship: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384252Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.7,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_210": {
+    "account_id": "acc_210",
+    "company_name": "LeadCo_210",
+    "score": 38.91,
+    "raw_score": 38.91,
+    "icp_fit": 34.8,
+    "intent_score": 48.5,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Equipment Purchase: new office opened",
+        "weight": 0.82,
+        "evidence": "equipment_purchase observed for acc_210",
+        "source": "sig_062",
+        "param": "intent_signal",
+        "value": "new office opened"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Expansion Announcement: Q3 growth reported",
+        "weight": 0.15,
+        "evidence": "Possibly mentioned revenue growth",
+        "source": "sig_061",
+        "param": "intent_signal",
+        "value": "Q3 growth reported"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      },
+      {
+        "factor": "New Contract Signal: yes",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "new_contract_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Credit Rating: AA",
+        "weight": 0.072,
+        "evidence": "weight=+0.0720 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "AA"
+      },
+      {
+        "factor": "Geography: West",
+        "weight": 0.0455,
+        "evidence": "weight=+0.0455 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "West"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Years Band: mature",
+        "weight": 0.0379,
+        "evidence": "weight=+0.0379 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "years_band",
+        "value": "mature"
+      }
+    ],
+    "gaps": [
+      "Company Stage: growth (negative indicator)",
+      "Collateral Type: receivables (negative indicator)",
+      "Existing Banking Relationship: no (negative indicator)",
+      "Equipment Purchase Signal: no (negative indicator)",
+      "Revenue Growth Signal: yes (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384366Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.485,
+    "anomalies": [
+      {
+        "rule": "low_extraction_confidence",
+        "severity": "WARNING",
+        "message": "Signal sig_061 has extraction_confidence=0.15 (threshold: 0.30). Signal may be unreliable.",
+        "affected_field": "extraction_confidence"
+      }
+    ],
+    "anomaly_flag": true
+  },
+  "acc_211": {
+    "account_id": "acc_211",
+    "company_name": "LeadCo_211",
+    "score": 27.93,
+    "raw_score": 27.93,
+    "icp_fit": 32.78,
+    "intent_score": 16.62,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 4 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Credit Rating Change: stable",
+        "weight": 0.84,
+        "evidence": "credit_rating_change observed for acc_211",
+        "source": "sig_028",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Equipment Purchase: improving",
+        "weight": 0.74,
+        "evidence": "equipment_purchase observed for acc_211",
+        "source": "sig_029",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Expansion Announcement: positive",
+        "weight": 0.68,
+        "evidence": "expansion_announcement observed for acc_211",
+        "source": "sig_031",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Credit Rating Change: stable",
+        "weight": 0.67,
+        "evidence": "credit_rating_change observed for acc_211",
+        "source": "sig_030",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Collateral Type: equipment",
+        "weight": 0.3295,
+        "evidence": "weight=+0.3295 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "equipment"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Referral Source Quality: low",
+        "weight": 0.0682,
+        "evidence": "weight=+0.0682 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "low"
+      },
+      {
+        "factor": "Years Band: mature",
+        "weight": 0.0379,
+        "evidence": "weight=+0.0379 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "years_band",
+        "value": "mature"
+      },
+      {
+        "factor": "Employee Band: 51-200",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "employee_band",
+        "value": "51-200"
+      }
+    ],
+    "gaps": [
+      "Geography: Southwest (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Credit Rating: B (negative indicator)",
+      "Loan Purpose: refinancing (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384494Z",
+    "signal_count": 4,
+    "avg_signal_confidence": 0.733,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_212": {
+    "account_id": "acc_212",
+    "company_name": "LeadCo_212",
+    "error": "Scoring blocked \u2014 ERROR anomaly detected",
+    "anomalies": [
+      {
+        "rule": "future_eligibility_date",
+        "severity": "ERROR",
+        "message": "Signal sig_063 has score_eligibility_date=2099-12-31 which is in the future (today=2026-08-11). Temporal integrity violation.",
+        "affected_field": "score_eligibility_date"
+      }
+    ],
+    "score": null,
+    "anomaly_flag": true
+  },
+  "acc_213": {
+    "account_id": "acc_213",
+    "company_name": "LeadCo_213",
+    "score": 27.36,
+    "raw_score": 27.36,
+    "icp_fit": 23.06,
+    "intent_score": 37.4,
+    "confidence": "HIGH",
+    "confidence_note": "HIGH confidence \u2014 4 signals, avg conf 0.935",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Leadership Change: stable",
+        "weight": 0.95,
+        "evidence": "leadership_change observed for acc_213",
+        "source": "sig_037",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Ma Activity: stable",
+        "weight": 0.94,
+        "evidence": "ma_activity observed for acc_213",
+        "source": "sig_038",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Ma Activity: improving",
+        "weight": 0.93,
+        "evidence": "ma_activity observed for acc_213",
+        "source": "sig_039",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Leadership Change: improving",
+        "weight": 0.92,
+        "evidence": "leadership_change observed for acc_213",
+        "source": "sig_036",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Collateral Type: equipment",
+        "weight": 0.3295,
+        "evidence": "weight=+0.3295 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "equipment"
+      },
+      {
+        "factor": "Dscr Band: adequate",
+        "weight": 0.1376,
+        "evidence": "weight=+0.1376 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "adequate"
+      },
+      {
+        "factor": "Credit Rating: A",
+        "weight": 0.0606,
+        "evidence": "weight=+0.0606 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "A"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Geography: Southwest (negative indicator)",
+      "Company Stage: growth (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Loan Purpose: expansion (negative indicator)",
+      "Loan Amount Band: 1m_5m (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384663Z",
+    "signal_count": 4,
+    "avg_signal_confidence": 0.935,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_214": {
+    "account_id": "acc_214",
+    "company_name": "LeadCo_214",
+    "score": 22.68,
+    "raw_score": 22.68,
+    "icp_fit": 28.59,
+    "intent_score": 8.88,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 4 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Leadership Change: positive",
+        "weight": 0.85,
+        "evidence": "leadership_change observed for acc_214",
+        "source": "sig_043",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Expansion Announcement: positive",
+        "weight": 0.81,
+        "evidence": "expansion_announcement observed for acc_214",
+        "source": "sig_041",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Credit Rating Change: strong",
+        "weight": 0.73,
+        "evidence": "credit_rating_change observed for acc_214",
+        "source": "sig_042",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Credit Rating Change: strong",
+        "weight": 0.69,
+        "evidence": "credit_rating_change observed for acc_214",
+        "source": "sig_040",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Loan Purpose: equipment_financing",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "equipment_financing"
+      },
+      {
+        "factor": "Equipment Purchase Signal: yes",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "equipment_purchase_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Years Band: mature",
+        "weight": 0.0379,
+        "evidence": "weight=+0.0379 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "years_band",
+        "value": "mature"
+      }
+    ],
+    "gaps": [
+      "Geography: Midwest (negative indicator)",
+      "Company Stage: growth (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Credit Rating: BB (negative indicator)",
+      "Collateral Type: receivables (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384776Z",
+    "signal_count": 4,
+    "avg_signal_confidence": 0.77,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_215": {
+    "account_id": "acc_215",
+    "company_name": "LeadCo_215",
+    "error": "Scoring blocked \u2014 ERROR anomaly detected",
+    "anomalies": [
+      {
+        "rule": "invalid_signal_type",
+        "severity": "ERROR",
+        "message": "Signal sig_065 has signal_type='unknown_type' which is not in the approved list: ['credit_rating_change', 'expansion_announcement', 'leadership_change', 'ma_activity', 'equipment_purchase'].",
+        "affected_field": "signal_type"
+      }
+    ],
+    "score": null,
+    "anomaly_flag": true
+  },
+  "acc_216": {
+    "account_id": "acc_216",
+    "company_name": "LeadCo_216",
+    "score": 44.24,
+    "raw_score": 44.24,
+    "icp_fit": 35.99,
+    "intent_score": 63.5,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Expansion Announcement: positive",
+        "weight": 0.93,
+        "evidence": "expansion_announcement observed for acc_216",
+        "source": "sig_049",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Ma Activity: positive",
+        "weight": 0.68,
+        "evidence": "ma_activity observed for acc_216",
+        "source": "sig_048",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Referral Source Quality: high",
+        "weight": 0.1919,
+        "evidence": "weight=+0.1919 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "high"
+      },
+      {
+        "factor": "Loan Purpose: equipment_financing",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "equipment_financing"
+      },
+      {
+        "factor": "Equipment Purchase Signal: yes",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "equipment_purchase_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Geography: West",
+        "weight": 0.0455,
+        "evidence": "weight=+0.0455 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "West"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Years Band: mature",
+        "weight": 0.0379,
+        "evidence": "weight=+0.0379 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "years_band",
+        "value": "mature"
+      }
+    ],
+    "gaps": [
+      "Company Stage: startup (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "Collateral Type: inventory (negative indicator)",
+      "Existing Banking Relationship: no (negative indicator)",
+      "New Contract Signal: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.384943Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.805,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_217": {
+    "account_id": "acc_217",
+    "company_name": "LeadCo_217",
+    "score": 48.61,
+    "raw_score": 48.61,
+    "icp_fit": 42.87,
+    "intent_score": 62.0,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 3 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Equipment Purchase: improving",
+        "weight": 0.84,
+        "evidence": "equipment_purchase observed for acc_217",
+        "source": "sig_050",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Ma Activity: positive",
+        "weight": 0.7,
+        "evidence": "ma_activity observed for acc_217",
+        "source": "sig_052",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Equipment Purchase: positive",
+        "weight": 0.67,
+        "evidence": "equipment_purchase observed for acc_217",
+        "source": "sig_051",
+        "param": "intent_signal",
+        "value": "positive"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Referral Source Quality: high",
+        "weight": 0.1919,
+        "evidence": "weight=+0.1919 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "high"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Dscr Band: adequate",
+        "weight": 0.1376,
+        "evidence": "weight=+0.1376 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "adequate"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      },
+      {
+        "factor": "New Contract Signal: yes",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "new_contract_signal",
+        "value": "yes"
+      }
+    ],
+    "gaps": [
+      "Industry: Logistics (negative indicator)",
+      "Company Stage: growth (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Credit Rating: B (negative indicator)",
+      "Collateral Type: inventory (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.385056Z",
+    "signal_count": 3,
+    "avg_signal_confidence": 0.737,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_218": {
+    "account_id": "acc_218",
+    "company_name": "LeadCo_218",
+    "score": 49.72,
+    "raw_score": 49.72,
+    "icp_fit": 37.38,
+    "intent_score": 78.5,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Expansion Announcement: stable",
+        "weight": 0.82,
+        "evidence": "expansion_announcement observed for acc_218",
+        "source": "sig_054",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Equipment Purchase: improving",
+        "weight": 0.75,
+        "evidence": "equipment_purchase observed for acc_218",
+        "source": "sig_053",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Company Stage: mature",
+        "weight": 0.3182,
+        "evidence": "weight=+0.3182 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "company_stage",
+        "value": "mature"
+      },
+      {
+        "factor": "Loan Purpose: equipment_financing",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "equipment_financing"
+      },
+      {
+        "factor": "Equipment Purchase Signal: yes",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "equipment_purchase_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Dscr Band: adequate",
+        "weight": 0.1376,
+        "evidence": "weight=+0.1376 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "adequate"
+      },
+      {
+        "factor": "Loan Amount Band: 5m_20m",
+        "weight": 0.0795,
+        "evidence": "weight=+0.0795 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_amount_band",
+        "value": "5m_20m"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Geography: West",
+        "weight": 0.0455,
+        "evidence": "weight=+0.0455 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "West"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Existing Banking Relationship: no (negative indicator)",
+      "New Contract Signal: no (negative indicator)",
+      "Prior Deal With Bank: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.385163Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.785,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_219": {
+    "account_id": "acc_219",
+    "company_name": "LeadCo_219",
+    "score": 39.06,
+    "raw_score": 39.06,
+    "icp_fit": 29.75,
+    "intent_score": 60.77,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 3 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Expansion Announcement: improving",
+        "weight": 0.84,
+        "evidence": "expansion_announcement observed for acc_219",
+        "source": "sig_056",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Equipment Purchase: strong",
+        "weight": 0.77,
+        "evidence": "equipment_purchase observed for acc_219",
+        "source": "sig_055",
+        "param": "intent_signal",
+        "value": "strong"
+      },
+      {
+        "factor": "Leadership Change: stable",
+        "weight": 0.71,
+        "evidence": "leadership_change observed for acc_219",
+        "source": "sig_057",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Collateral Type: equipment",
+        "weight": 0.3295,
+        "evidence": "weight=+0.3295 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "equipment"
+      },
+      {
+        "factor": "Referral Source Quality: high",
+        "weight": 0.1919,
+        "evidence": "weight=+0.1919 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "high"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      },
+      {
+        "factor": "New Contract Signal: yes",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "new_contract_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Industry: Professional_Services (negative indicator)",
+      "Geography: Northeast (negative indicator)",
+      "Company Stage: startup (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.385271Z",
+    "signal_count": 3,
+    "avg_signal_confidence": 0.773,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_220": {
+    "account_id": "acc_220",
+    "company_name": "LeadCo_220",
+    "score": 45.14,
+    "raw_score": 45.14,
+    "icp_fit": 30.91,
+    "intent_score": 78.33,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 3 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Expansion Announcement: improving",
+        "weight": 0.85,
+        "evidence": "expansion_announcement observed for acc_220",
+        "source": "sig_059",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Expansion Announcement: improving",
+        "weight": 0.76,
+        "evidence": "expansion_announcement observed for acc_220",
+        "source": "sig_058",
+        "param": "intent_signal",
+        "value": "improving"
+      },
+      {
+        "factor": "Equipment Purchase: stable",
+        "weight": 0.74,
+        "evidence": "equipment_purchase observed for acc_220",
+        "source": "sig_060",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Industry: Manufacturing",
+        "weight": 0.226,
+        "evidence": "weight=+0.2260 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "industry",
+        "value": "Manufacturing"
+      },
+      {
+        "factor": "Dscr Band: adequate",
+        "weight": 0.1376,
+        "evidence": "weight=+0.1376 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "adequate"
+      },
+      {
+        "factor": "Geography: Southeast",
+        "weight": 0.0947,
+        "evidence": "weight=+0.0947 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "Southeast"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      },
+      {
+        "factor": "New Contract Signal: yes",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "new_contract_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Referral Source Quality: low",
+        "weight": 0.0682,
+        "evidence": "weight=+0.0682 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "low"
+      },
+      {
+        "factor": "Credit Rating: A",
+        "weight": 0.0606,
+        "evidence": "weight=+0.0606 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "A"
+      }
+    ],
+    "gaps": [
+      "Company Stage: growth (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Collateral Type: inventory (negative indicator)",
+      "Years Band: established (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.385381Z",
+    "signal_count": 3,
+    "avg_signal_confidence": 0.783,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_221": {
+    "account_id": "acc_221",
+    "company_name": "LeadCo_221",
+    "score": 40.0,
+    "raw_score": 40.0,
+    "icp_fit": 35.01,
+    "intent_score": 51.65,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Leadership Change: stable",
+        "weight": 0.81,
+        "evidence": "leadership_change observed for acc_221",
+        "source": "sig_071",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Equipment Purchase: stable",
+        "weight": 0.79,
+        "evidence": "equipment_purchase observed for acc_221",
+        "source": "sig_072",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Loan Purpose: equipment_financing",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "equipment_financing"
+      },
+      {
+        "factor": "Equipment Purchase Signal: yes",
+        "weight": 0.1515,
+        "evidence": "weight=+0.1515 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "equipment_purchase_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Credit Rating: A",
+        "weight": 0.0606,
+        "evidence": "weight=+0.0606 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "A"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Industry: Logistics (negative indicator)",
+      "Geography: Midwest (negative indicator)",
+      "Company Stage: startup (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "New Contract Signal: no (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.385489Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.8,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_222": {
+    "account_id": "acc_222",
+    "company_name": "LeadCo_222",
+    "score": 28.42,
+    "raw_score": 28.42,
+    "icp_fit": 31.71,
+    "intent_score": 20.75,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 2 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Expansion Announcement: revenue growth 2023",
+        "weight": 0.8,
+        "evidence": "expansion_announcement observed for acc_222",
+        "source": "sig_069",
+        "param": "intent_signal",
+        "value": "revenue growth 2023"
+      },
+      {
+        "factor": "Credit Rating Change: DSCR 1.45 in 2023",
+        "weight": 0.77,
+        "evidence": "credit_rating_change observed for acc_222",
+        "source": "sig_070",
+        "param": "intent_signal",
+        "value": "DSCR 1.45 in 2023"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Referral Source Quality: high",
+        "weight": 0.1919,
+        "evidence": "weight=+0.1919 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "high"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Expansion Signal: no",
+        "weight": 0.0215,
+        "evidence": "weight=+0.0215 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "expansion_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Credit Rating: AAA",
+        "weight": 0.0025,
+        "evidence": "weight=+0.0025 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "AAA"
+      }
+    ],
+    "gaps": [
+      "Geography: Midwest (negative indicator)",
+      "Company Stage: startup (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Years Band: established (negative indicator)",
+      "Loan Purpose: working_capital (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.385916Z",
+    "signal_count": 2,
+    "avg_signal_confidence": 0.785,
+    "anomalies": [
+      {
+        "rule": "stale_signals",
+        "severity": "WARNING",
+        "message": "All signals for acc_222 are older than 18 months (newest: 2024-10-26, 654 days ago).",
+        "affected_field": "event_date"
+      }
+    ],
+    "anomaly_flag": true
+  },
+  "acc_223": {
+    "account_id": "acc_223",
+    "company_name": "LeadCo_223",
+    "score": 28.31,
+    "raw_score": 28.31,
+    "icp_fit": 30.16,
+    "intent_score": 24.0,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 3 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Credit Rating Change: stable",
+        "weight": 0.84,
+        "evidence": "credit_rating_change observed for acc_223",
+        "source": "sig_073",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Ma Activity: stable",
+        "weight": 0.78,
+        "evidence": "ma_activity observed for acc_223",
+        "source": "sig_074",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Expansion Announcement: stable",
+        "weight": 0.75,
+        "evidence": "expansion_announcement observed for acc_223",
+        "source": "sig_075",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Referral Source Quality: low",
+        "weight": 0.0682,
+        "evidence": "weight=+0.0682 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "referral_source_quality",
+        "value": "low"
+      },
+      {
+        "factor": "Debt To Ebitda Band: moderate",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "moderate"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Geography: Northeast (negative indicator)",
+      "Company Stage: growth (negative indicator)",
+      "Credit Rating: BB (negative indicator)",
+      "Collateral Type: receivables (negative indicator)",
+      "Loan Purpose: working_capital (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.386130Z",
+    "signal_count": 3,
+    "avg_signal_confidence": 0.79,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_224": {
+    "account_id": "acc_224",
+    "company_name": "LeadCo_224",
+    "score": 29.31,
+    "raw_score": 29.31,
+    "icp_fit": 35.64,
+    "intent_score": 14.53,
+    "confidence": "MEDIUM",
+    "confidence_note": "MEDIUM confidence \u2014 3 signals, show +/-10 uncertainty",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Credit Rating Change: stable",
+        "weight": 0.91,
+        "evidence": "credit_rating_change observed for acc_224",
+        "source": "sig_076",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Leadership Change: stable",
+        "weight": 0.77,
+        "evidence": "leadership_change observed for acc_224",
+        "source": "sig_077",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Equipment Purchase: stable",
+        "weight": 0.66,
+        "evidence": "equipment_purchase observed for acc_224",
+        "source": "sig_078",
+        "param": "intent_signal",
+        "value": "stable"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Dscr Band: adequate",
+        "weight": 0.1376,
+        "evidence": "weight=+0.1376 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "adequate"
+      },
+      {
+        "factor": "Collateral Type: real_estate",
+        "weight": 0.096,
+        "evidence": "weight=+0.0960 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "real_estate"
+      },
+      {
+        "factor": "Geography: Southeast",
+        "weight": 0.0947,
+        "evidence": "weight=+0.0947 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "Southeast"
+      },
+      {
+        "factor": "Credit Rating: AA",
+        "weight": 0.072,
+        "evidence": "weight=+0.0720 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "AA"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Industry: Logistics (negative indicator)",
+      "Company Stage: startup (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Loan Purpose: refinancing (negative indicator)",
+      "Loan Amount Band: 1m_5m (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.386282Z",
+    "signal_count": 3,
+    "avg_signal_confidence": 0.78,
+    "anomalies": [],
+    "anomaly_flag": false
+  },
+  "acc_225": {
+    "account_id": "acc_225",
+    "company_name": "LeadCo_225",
+    "score": 19.02,
+    "raw_score": 19.02,
+    "icp_fit": 27.17,
+    "intent_score": 0.0,
+    "confidence": "LOW",
+    "confidence_note": "Score capped at 65 \u2014 LOW confidence (0 signals)",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Loan Purpose: acquisition",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "loan_purpose",
+        "value": "acquisition"
+      },
+      {
+        "factor": "New Contract Signal: yes",
+        "weight": 0.0745,
+        "evidence": "weight=+0.0745 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "new_contract_signal",
+        "value": "yes"
+      },
+      {
+        "factor": "Credit Rating: AA",
+        "weight": 0.072,
+        "evidence": "weight=+0.0720 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "credit_rating",
+        "value": "AA"
+      },
+      {
+        "factor": "Geography: West",
+        "weight": 0.0455,
+        "evidence": "weight=+0.0455 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "geography",
+        "value": "West"
+      },
+      {
+        "factor": "Prior Default Flag: no",
+        "weight": 0.0442,
+        "evidence": "weight=+0.0442 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_default_flag",
+        "value": "no"
+      },
+      {
+        "factor": "Employee Band: 51-200",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "employee_band",
+        "value": "51-200"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Expansion Signal: no",
+        "weight": 0.0215,
+        "evidence": "weight=+0.0215 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "expansion_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "Company Stage: growth (negative indicator)",
+      "Business Model: B2B (negative indicator)",
+      "Dscr Band: low (negative indicator)",
+      "Debt To Ebitda Band: high (negative indicator)",
+      "Years Band: established (negative indicator)"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.386414Z",
+    "signal_count": 0,
+    "avg_signal_confidence": 0.0,
+    "anomalies": [
+      {
+        "rule": "cold_start",
+        "severity": "WARNING",
+        "message": "Lead acc_225 has no signals. Score uses ICP Fit only and will receive LOW confidence band.",
+        "affected_field": "signals"
+      }
+    ],
+    "anomaly_flag": true
+  },
+  "acc_manual_001": {
+    "account_id": "acc_manual_001",
+    "company_name": "Test Corp",
+    "score": 33.84,
+    "raw_score": 33.84,
+    "icp_fit": 48.35,
+    "intent_score": 0.0,
+    "confidence": "LOW",
+    "confidence_note": "Score capped at 65 \u2014 LOW confidence (0 signals)",
+    "fit_category": "Unfit",
+    "recommended_action": "Deprioritize",
+    "network_proximity": {
+      "hops": null,
+      "via_account": null,
+      "via_deal": null,
+      "relationship_type": null,
+      "display": "None detected within 2 hops"
+    },
+    "positive_signals": [
+      {
+        "factor": "Collateral Type: equipment",
+        "weight": 0.3295,
+        "evidence": "weight=+0.3295 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "collateral_type",
+        "value": "equipment"
+      },
+      {
+        "factor": "Dscr Band: strong",
+        "weight": 0.2753,
+        "evidence": "weight=+0.2753 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "dscr_band",
+        "value": "strong"
+      },
+      {
+        "factor": "Debt To Ebitda Band: low",
+        "weight": 0.2563,
+        "evidence": "weight=+0.2563 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "debt_to_ebitda_band",
+        "value": "low"
+      },
+      {
+        "factor": "Existing Banking Relationship: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "existing_banking_relationship",
+        "value": "yes"
+      },
+      {
+        "factor": "Prior Deal With Bank: yes",
+        "weight": 0.1818,
+        "evidence": "weight=+0.1818 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "prior_deal_with_bank",
+        "value": "yes"
+      },
+      {
+        "factor": "Revenue Growth Signal: no",
+        "weight": 0.0694,
+        "evidence": "weight=+0.0694 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "revenue_growth_signal",
+        "value": "no"
+      },
+      {
+        "factor": "Years Band: mature",
+        "weight": 0.0379,
+        "evidence": "weight=+0.0379 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "years_band",
+        "value": "mature"
+      },
+      {
+        "factor": "Headcount Growth Signal: no",
+        "weight": 0.0366,
+        "evidence": "weight=+0.0366 from ICP v1.0",
+        "source": "icp_v1.0",
+        "param": "headcount_growth_signal",
+        "value": "no"
+      }
+    ],
+    "gaps": [
+      "No credit rating data",
+      "No loan purpose data",
+      "No prior default flag data",
+      "No expansion signal data",
+      "No equipment purchase signal data"
+    ],
+    "icp_version": "v1.0",
+    "scored_at": "2026-08-11T20:48:10.135183Z",
+    "signal_count": 0,
+    "avg_signal_confidence": 0.0,
+    "anomalies": [
+      {
+        "rule": "cold_start",
+        "severity": "WARNING",
+        "message": "Lead acc_manual_001 has no signals. Score uses ICP Fit only and will receive LOW confidence band.",
+        "affected_field": "signals"
+      }
+    ],
+    "anomaly_flag": true
+  },
+  "acc_bad_dscr": {
+    "account_id": "acc_bad_dscr",
+    "company_name": "Bad",
+    "error": "Scoring blocked \u2014 ERROR anomaly detected",
+    "anomalies": [
+      {
+        "rule": "cold_start",
+        "severity": "WARNING",
+        "message": "Lead acc_bad_dscr has no signals. Score uses ICP Fit only and will receive LOW confidence band.",
+        "affected_field": "signals"
+      },
+      {
+        "rule": "impossible_financial_value",
+        "severity": "ERROR",
+        "message": "dscr=-0.5 is negative (physically impossible). Cannot produce a meaningful score from invalid financial data.",
+        "affected_field": "dscr"
+      }
+    ],
+    "score": null,
+    "anomaly_flag": true
+  }
+}

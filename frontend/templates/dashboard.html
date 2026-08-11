@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SalesIQ — Corporate Lending Intelligence</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+:root{--purple:#6B21A8;--purple-light:#7C3AED;--purple-dark:#4C1D95;
+  --bg:#0F172A;--surface:#1E293B;--surface2:#293548;
+  --text:#F1F5F9;--muted:#94A3B8;--border:#334155;
+  --green:#22C55E;--amber:#F59E0B;--red:#EF4444;--blue:#3B82F6;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);
+     display:flex;height:100vh;overflow:hidden;}
+#sidebar{width:220px;min-width:220px;background:var(--purple-dark);
+  display:flex;flex-direction:column;}
+.logo{padding:24px 20px 20px;font-size:1.2rem;font-weight:700;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.1);}
+.logo span{color:#C4B5FD;font-size:.7rem;display:block;font-weight:400;margin-top:2px;}
+nav{flex:1;padding:16px 0;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;cursor:pointer;
+  color:rgba(255,255,255,.7);font-size:.9rem;transition:all .15s;
+  border-left:3px solid transparent;}
+.nav-item:hover{background:rgba(255,255,255,.08);color:#fff;}
+.nav-item.active{background:rgba(255,255,255,.12);color:#fff;border-left-color:#C4B5FD;}
+.nav-icon{font-size:1.1rem;width:20px;text-align:center;}
+#main{flex:1;overflow-y:auto;padding:32px;background:var(--bg);}
+.page{display:none;}.page.active{display:block;}
+h1{font-size:1.6rem;font-weight:700;margin-bottom:6px;}
+.subtitle{color:var(--muted);font-size:.9rem;margin-bottom:28px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+.kpi-card{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:20px;}
+.kpi-card .label{font-size:.78rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:8px;}
+.kpi-card .value{font-size:2rem;font-weight:700;}
+.kpi-card .sub{font-size:.8rem;color:var(--muted);margin-top:4px;}
+.kpi-card.green .value{color:var(--green);}
+.kpi-card.amber .value{color:var(--amber);}
+.kpi-card.blue  .value{color:var(--blue);}
+.kpi-card.purple .value{color:#C4B5FD;}
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
+.chart-card{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:20px;}
+.chart-card h3{font-size:.9rem;color:var(--muted);margin-bottom:16px;}
+canvas{max-height:220px;}
+.card{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:24px;margin-bottom:20px;}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.card-header h2{font-size:1.1rem;font-weight:600;}
+table{width:100%;border-collapse:collapse;font-size:.875rem;}
+th{text-align:left;padding:10px 12px;color:var(--muted);font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border);}
+td{padding:12px;border-bottom:1px solid rgba(51,65,85,.5);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr.lead-row{cursor:pointer;}
+tr.lead-row:hover td{background:rgba(255,255,255,.03);}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.75rem;font-weight:600;}
+.badge-optimal{background:rgba(34,197,94,.15);color:var(--green);}
+.badge-partial{background:rgba(245,158,11,.15);color:var(--amber);}
+.badge-unfit{background:rgba(239,68,68,.15);color:var(--red);}
+.badge-high{background:rgba(59,130,246,.15);color:var(--blue);}
+.badge-medium{background:rgba(245,158,11,.15);color:var(--amber);}
+.badge-low{background:rgba(239,68,68,.15);color:var(--red);}
+.badge-warn{background:rgba(245,158,11,.12);color:var(--amber);font-size:.7rem;}
+.score-detail{display:none;background:var(--surface2);border-radius:8px;padding:16px;margin-top:8px;}
+.score-detail.open{display:block;}
+.score-meta{display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap;}
+.score-meta .metric .val{font-size:1.5rem;font-weight:700;color:#C4B5FD;}
+.score-meta .metric .lbl{font-size:.72rem;color:var(--muted);}
+.ev-table{width:100%;font-size:.82rem;margin-top:12px;}
+.ev-table th{font-size:.72rem;padding:6px 10px;}
+.ev-table td{padding:7px 10px;}
+.gaps-list{margin-top:10px;}
+.gaps-list li{color:var(--amber);font-size:.82rem;margin-left:16px;}
+.detail-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+.btn{padding:8px 16px;border-radius:8px;border:none;cursor:pointer;
+  font-size:.85rem;font-weight:500;transition:opacity .15s;}
+.btn:hover{opacity:.85;}
+.btn-primary{background:var(--purple);color:#fff;}
+.btn-green{background:var(--green);color:#000;}
+.btn-amber{background:var(--amber);color:#000;}
+.btn-red{background:var(--red);color:#fff;}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--text);border:1px solid var(--border);}
+.btn-sm{padding:5px 11px;font-size:.78rem;}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;}
+.form-group label{display:block;font-size:.78rem;color:var(--muted);margin-bottom:5px;}
+.form-group input,.form-group select{width:100%;padding:8px 12px;background:var(--bg);
+  border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--purple-light);}
+.graph-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.graph-tab{padding:10px 20px;cursor:pointer;font-size:.875rem;color:var(--muted);
+  border-bottom:2px solid transparent;transition:all .15s;}
+.graph-tab.active{color:var(--text);border-bottom-color:var(--purple-light);}
+.graph-panel{display:none;}.graph-panel.active{display:block;}
+#graphContainer,#orbitContainer,#brainContainer{width:100%;height:480px;
+  background:var(--surface2);border-radius:12px;border:1px solid var(--border);}
+.graph-legend{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);}
+.legend-dot{width:10px;height:10px;border-radius:50%;}
+.query-box{display:flex;gap:10px;margin-bottom:16px;}
+.query-box input{flex:1;padding:10px 14px;background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;color:var(--text);font-size:.9rem;}
+#queryResult{background:var(--surface2);border-radius:10px;padding:18px;margin-top:12px;display:none;}
+.weights-table td:last-child{width:180px;}
+.weight-bar{height:8px;background:var(--border);border-radius:4px;margin-top:4px;}
+.weight-bar-fill{height:100%;background:var(--purple-light);border-radius:4px;}
+.state-chip{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:600;}
+.state-DRAFT{background:rgba(148,163,184,.15);color:var(--muted);}
+.state-PENDING_APPROVAL{background:rgba(245,158,11,.15);color:var(--amber);}
+.state-ACTIVE{background:rgba(34,197,94,.15);color:var(--green);}
+.audit-entry{padding:10px 14px;border-bottom:1px solid var(--border);font-size:.82rem;}
+.audit-entry:last-child{border-bottom:none;}
+.audit-time{color:var(--muted);font-size:.75rem;}
+.empty{color:var(--muted);text-align:center;padding:40px;font-size:.9rem;}
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:10px;
+  font-weight:600;font-size:.875rem;z-index:1000;display:none;}
+.anomaly-flag{font-size:.7rem;color:var(--amber);margin-left:6px;}
+</style>
+</head>
+<body>
+<div id="sidebar">
+  <div class="logo">SalesIQ <span>Corporate Lending Intelligence</span></div>
+  <nav>
+    <div class="nav-item active" onclick="showPage('home',this)"><span class="nav-icon">🏠</span> Home</div>
+    <div class="nav-item" onclick="showPage('leads',this)"><span class="nav-icon">📋</span> Leads</div>
+    <div class="nav-item" onclick="showPage('graph',this)"><span class="nav-icon">🕸️</span> Knowledge Graph</div>
+    <div class="nav-item" onclick="showPage('engine',this)"><span class="nav-icon">⚙️</span> Engine Room</div>
+    <div class="nav-item" onclick="showPage('audit',this)"><span class="nav-icon">📜</span> Audit Log</div>
+    <div class="nav-item" onclick="showPage('howto',this)"><span class="nav-icon">❓</span> How It Works</div>
+  </nav>
+</div>
+<div id="main">
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <h1>Pipeline Overview</h1>
+  <p class="subtitle">Real-time lead scoring — every number traced to evidence.</p>
+  <div class="kpi-grid">
+    <div class="kpi-card blue"><div class="label">Total Leads Scored</div>
+      <div class="value" id="kpi-total">—</div><div class="sub">from new_leads.csv</div></div>
+    <div class="kpi-card green"><div class="label">Optimal Fit (≥75)</div>
+      <div class="value" id="kpi-optimal">—</div>
+      <div class="sub" id="kpi-pipeline">pipeline value: —</div></div>
+    <div class="kpi-card amber"><div class="label">Avg Score</div>
+      <div class="value" id="kpi-avg">—</div><div class="sub">across all scored leads</div></div>
+    <div class="kpi-card purple"><div class="label">High Confidence</div>
+      <div class="value" id="kpi-high">—</div><div class="sub">HIGH confidence band</div></div>
+  </div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Score Distribution</h3><canvas id="distChart"></canvas></div>
+    <div class="chart-card"><h3>Regional Breakdown</h3><canvas id="regionChart"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-header"><h2>Quick Actions</h2></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="scoreAll()">▶ Score All Leads</button>
+      <button class="btn btn-ghost" onclick="showPage('leads',null)">View Leads Table</button>
+      <button class="btn btn-ghost" onclick="showPage('engine',null)">ICP Engine Room</button>
+    </div>
+  </div>
+</div>
+
+<!-- LEADS -->
+<div id="page-leads" class="page">
+  <h1>Scored Leads</h1>
+  <p class="subtitle">Ranked by score. Click any row to expand evidence trail.</p>
+  <div class="card">
+    <div class="card-header"><h2>Lead Rankings</h2>
+      <button class="btn btn-primary btn-sm" onclick="scoreAll()">▶ Refresh Scores</button></div>
+    <table>
+      <thead><tr><th>Company</th><th>Score</th><th>ICP Fit</th><th>Intent</th>
+        <th>Confidence</th><th>Network</th><th>Action</th></tr></thead>
+      <tbody id="leadsBody"><tr><td colspan="7" class="empty">Run "Score All Leads" to populate.</td></tr></tbody>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-header"><h2>Manual Lead Entry</h2></div>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:18px;">Score a single lead manually — identical pipeline to bulk scoring.</p>
+    <div class="form-grid">
+      <div class="form-group"><label>Account ID *</label><input id="f-account_id" value="acc_manual_001"></div>
+      <div class="form-group"><label>Company Name</label><input id="f-company_name" placeholder="Acme Corp"></div>
+      <div class="form-group"><label>Industry</label><select id="f-industry">
+        <option value="">— select —</option><option>manufacturing</option><option>technology</option>
+        <option>healthcare</option><option>retail</option><option>construction</option>
+        <option>logistics</option><option>financial_services</option><option>energy</option></select></div>
+      <div class="form-group"><label>Employee Band</label><select id="f-employee_band">
+        <option value="">— select —</option><option>small</option><option>medium</option><option>large</option></select></div>
+      <div class="form-group"><label>Business Model</label><select id="f-business_model">
+        <option value="">— select —</option><option>b2b</option><option>b2c</option><option>b2b2c</option></select></div>
+      <div class="form-group"><label>Geography</label><select id="f-geography">
+        <option value="">— select —</option><option>north_america</option><option>europe</option>
+        <option>asia_pacific</option><option>latin_america</option></select></div>
+      <div class="form-group"><label>Loan Type</label><select id="f-loan_type">
+        <option value="">— select —</option><option>equipment_financing</option>
+        <option>working_capital</option><option>real_estate</option>
+        <option>acquisition</option><option>expansion</option></select></div>
+      <div class="form-group"><label>Collateral Type</label><select id="f-collateral_type">
+        <option value="">— select —</option><option>equipment</option><option>real_estate</option>
+        <option>receivables</option><option>inventory</option><option>none</option></select></div>
+      <div class="form-group"><label>Company Stage</label><select id="f-company_stage">
+        <option value="">— select —</option><option>startup</option><option>growth</option>
+        <option>established</option><option>mature</option></select></div>
+      <div class="form-group"><label>DSCR (e.g. 1.45)</label>
+        <input id="f-dscr" type="number" step="0.01" placeholder="1.45"></div>
+      <div class="form-group"><label>Debt/EBITDA Ratio</label>
+        <input id="f-debt_to_ebitda_ratio" type="number" step="0.1" placeholder="3.2"></div>
+      <div class="form-group"><label>Years in Business</label>
+        <input id="f-years_in_business" type="number" step="0.5" placeholder="8"></div>
+      <div class="form-group"><label>Banking Relationship</label><select id="f-existing_banking_relationship">
+        <option value="">— select —</option><option>yes</option><option>no</option></select></div>
+      <div class="form-group"><label>Loan Amount Band</label><select id="f-loan_amount_band">
+        <option value="">— select —</option><option>small</option><option>medium</option><option>large</option></select></div>
+      <div class="form-group"><label>Referred by Portfolio</label><select id="f-referred_by_portfolio">
+        <option value="no">No</option><option value="yes">Yes</option></select></div>
+    </div>
+    <button class="btn btn-primary" onclick="scoreSingle()">⚡ Score Now</button>
+    <div id="singleResult"></div>
+  </div>
+</div>
+
+<!-- KNOWLEDGE GRAPH -->
+<div id="page-graph" class="page">
+  <h1>Knowledge Graph</h1>
+  <p class="subtitle">Path-based evidence — not embeddings.</p>
+  <div class="graph-tabs">
+    <div class="graph-tab active" onclick="switchGraphTab('brain',this)">🧠 Knowledge Brain</div>
+    <div class="graph-tab" onclick="switchGraphTab('pipeline',this)">🌐 Global Pipeline</div>
+    <div class="graph-tab" onclick="switchGraphTab('orbit',this)">🔭 Lead Orbit</div>
+  </div>
+  <div id="gtab-brain" class="graph-panel active">
+    <div id="brainContainer"></div>
+    <div class="graph-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#4A90D9"></div>Account</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#7ED321"></div>Won Deal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#F5A623"></div>Signal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#9B59B6"></div>ICP Version</div>
+    </div>
+  </div>
+  <div id="gtab-pipeline" class="graph-panel">
+    <div id="graphContainer"></div>
+    <div class="graph-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#4A90D9"></div>Account</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#7ED321"></div>Won Deal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#D0021B"></div>Lost Deal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#F5A623"></div>Signal</div>
+    </div>
+  </div>
+  <div id="gtab-orbit" class="graph-panel">
+    <div style="display:flex;gap:10px;margin-bottom:14px;">
+      <input id="orbitLeadId" placeholder="acc_201"
+        style="flex:1;padding:9px 13px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.875rem;">
+      <button class="btn btn-primary" onclick="loadOrbit()">Load Orbit</button>
+    </div>
+    <div id="orbitContainer"></div>
+    <div id="orbitEmpty" style="display:none;color:var(--muted);text-align:center;padding:20px;font-size:.875rem;">
+      No network connections detected within 2 hops.</div>
+    <div class="graph-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#4A90D9"></div>Lead (center)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#F5A623"></div>Signal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#7ED321"></div>Won Deal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#9B9B9B"></div>Connected Account</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:24px;">
+    <div class="card-header"><h2>Ask the Graph</h2></div>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px;">
+      Evidence-grounded answers from the knowledge graph.</p>
+    <div class="query-box">
+      <input id="queryInput"
+        placeholder="Why did acc_201 score? / Have we won accounts like acc_201? / Why is acc_201 higher than acc_202?"
+        onkeydown="if(event.key==='Enter')submitQuery()">
+      <button class="btn btn-primary" onclick="submitQuery()">Ask</button>
+    </div>
+    <div id="queryResult">
+      <div id="queryAnswer"></div>
+      <div id="queryPaths" style="font-size:.78rem;color:var(--muted);margin-top:8px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ENGINE ROOM -->
+<div id="page-engine" class="page">
+  <h1>Engine Room</h1>
+  <p class="subtitle">ICP weights — human approval required for every change.</p>
+  <div class="card">
+    <div class="card-header"><h2>ICP Status</h2>
+      <span id="icpStatusChip" class="state-chip state-DRAFT">DRAFT</span></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+      <button class="btn btn-primary btn-sm" onclick="icpSubmit()">Submit for Approval</button>
+      <button class="btn btn-green btn-sm" onclick="icpApprove()">✓ Approve</button>
+      <button class="btn btn-red btn-sm" onclick="icpReject()">✗ Reject</button>
+    </div>
+    <div id="icpVersion" style="color:var(--muted);font-size:.82rem;margin-bottom:16px;"></div>
+    <table class="weights-table">
+      <thead><tr><th>Parameter</th><th>Weight</th><th>Strength</th></tr></thead>
+      <tbody id="weightsBody"><tr><td colspan="3" class="empty">Load ICP to view weights.</td></tr></tbody>
+    </table>
+    <button class="btn btn-ghost btn-sm" style="margin-top:16px;" onclick="loadICP()">↻ Refresh ICP</button>
+  </div>
+  <div class="card">
+    <div class="card-header"><h2>Backtest</h2></div>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px;">
+      Date-based split — no temporal leakage.</p>
+    <button class="btn btn-primary btn-sm" onclick="runBacktest()">▶ Run Backtest</button>
+    <div id="backtestResult" style="margin-top:16px;"></div>
+  </div>
+</div>
+
+<!-- AUDIT LOG -->
+<div id="page-audit" class="page">
+  <h1>Audit Log</h1>
+  <p class="subtitle">Every action recorded. Immutable trail.</p>
+  <div class="card">
+    <div class="card-header"><h2>All Events</h2>
+      <button class="btn btn-ghost btn-sm" onclick="loadAudit()">↻ Refresh</button></div>
+    <div id="auditEntries"><div class="empty">No audit entries yet.</div></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="page-howto" class="page">
+  <h1>How It Works</h1>
+  <p class="subtitle">Transparent by design — no black boxes.</p>
+  <div class="card">
+    <h2 style="margin-bottom:16px;">Scoring Formula</h2>
+    <div style="background:var(--surface2);border-radius:10px;padding:18px;font-family:monospace;font-size:.875rem;line-height:1.9;color:#C4B5FD;">
+      ICP Fit   = Σ( weight[param] × presence[param] ) — 21 firmographic/financial params<br>
+      Intent    = Σ( signal_confidence × polarity ) — matched intent signals<br>
+      RawScore  = 0.70 × ICP_Fit + 0.30 × Intent<br>
+      Network Proximity = graph hops to nearest won deal (separate — never blended)
+    </div>
+  </div>
+  <div class="card">
+    <h2 style="margin-bottom:16px;">Confidence Bands</h2>
+    <table><thead><tr><th>Band</th><th>Trigger</th><th>Display</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-high">HIGH</span></td>
+        <td>4+ signals, avg conf ≥ 0.80</td><td>Show RawScore as-is</td></tr>
+      <tr><td><span class="badge badge-medium">MEDIUM</span></td>
+        <td>2–3 matched signals</td><td>Show RawScore with ±10 band</td></tr>
+      <tr><td><span class="badge badge-low">LOW</span></td>
+        <td>Fewer than 2 signals</td><td>Cap at 65, show LOW badge</td></tr>
+    </tbody></table>
+    <p style="color:var(--muted);font-size:.82rem;margin-top:12px;">
+      Confidence is a <strong style="color:var(--text)">display modifier</strong>, never blended into the score.</p>
+  </div>
+  <div class="card">
+    <h2 style="margin-bottom:16px;">Responsible AI</h2>
+    <ul style="font-size:.875rem;line-height:2;color:var(--muted);margin-left:18px;">
+      <li>No individual-level personal data — scores companies, not people.</li>
+      <li>Every signal retains full provenance (signal_id, source, confidence).</li>
+      <li>Scoring is deterministic — identical inputs always produce identical outputs.</li>
+      <li>Human approval required for every ICP weight change. No silent auto-retraining.</li>
+      <li>Rep overrides logged as feedback — never used as training labels.</li>
+      <li>Temporal leakage prevention: score_eligibility_date ≤ deal_created_date enforced at query layer.</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Navigation ────────────────────────────────────────────────
+function showPage(name, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  if (el) el.classList.add('active');
+  if (name==='home')   loadHome();
+  if (name==='leads')  loadLeads();
+  if (name==='graph')  { loadBrain(); }
+  if (name==='engine') loadICP();
+  if (name==='audit')  loadAudit();
+}
+
+function toast(msg, ok=true) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = ok ? 'var(--green)' : 'var(--red)';
+  t.style.color = ok ? '#000' : '#fff';
+  t.style.display = 'block';
+  setTimeout(() => t.style.display='none', 3000);
+}
+
+// ── Score helpers — use REAL key names from scoring_engine.py ──
+// score_lead() returns "score", "confidence", "network_proximity" (dict)
+// NOT "total_score", "confidence_band", "network_proximity_hops"
+
+function scoreBadge(s) {
+  if (s===null||s===undefined) return '<span class="badge badge-unfit">ERR</span>';
+  const v = Math.round(s);
+  if (v>=75) return `<span class="badge badge-optimal">${v}</span>`;
+  if (v>=50) return `<span class="badge badge-partial">${v}</span>`;
+  return `<span class="badge badge-unfit">${v}</span>`;
+}
+function confBadge(c) {
+  const cls = {HIGH:'badge-high',MEDIUM:'badge-medium',LOW:'badge-low'}[c]||'badge-low';
+  return `<span class="badge ${cls}">${c||'LOW'}</span>`;
+}
+function actionLabel(a) {
+  return {Prioritize:'🟢 Prioritize',Nurture:'🟡 Nurture',Deprioritize:'🔴 Deprioritize'}[a]||a||'—';
+}
+function getScore(l)  { return l.score; }          // real key: "score"
+function getConf(l)   { return l.confidence; }      // real key: "confidence"
+function getProxDisplay(l) {
+  // real key: "network_proximity" → nested dict with "hops" and "display"
+  const p = l.network_proximity;
+  return (p && typeof p==='object') ? (p.display||'None within 2 hops') : 'None within 2 hops';
+}
+function getProxHops(l) {
+  const p = l.network_proximity;
+  return (p && typeof p==='object') ? p.hops : null;
+}
+
+// ── HOME ──────────────────────────────────────────────────────
+let _distChart, _regionChart;
+async function loadHome() {
+  try {
+    const d = await fetch('/dashboard/summary').then(r=>r.json());
+    document.getElementById('kpi-total').textContent   = d.total_leads;
+    document.getElementById('kpi-optimal').textContent = d.optimal;
+    document.getElementById('kpi-avg').textContent     = d.avg_score;
+    document.getElementById('kpi-high').textContent    = d.high_confidence;
+    const pv = d.pipeline_value_estimate>=1e6
+      ? '$'+(d.pipeline_value_estimate/1e6).toFixed(1)+'M'
+      : '$'+d.pipeline_value_estimate.toLocaleString();
+    document.getElementById('kpi-pipeline').textContent = 'est. pipeline: '+pv;
+    const ctx = document.getElementById('distChart');
+    if (_distChart) _distChart.destroy();
+    _distChart = new Chart(ctx, {type:'doughnut',
+      data:{labels:['Optimal (≥75)','Partial (50-74)','Unfit (<50)'],
+        datasets:[{data:[d.optimal,d.partial,d.unfit],
+          backgroundColor:['#22C55E','#F59E0B','#EF4444'],
+          borderColor:'#1E293B',borderWidth:2}]},
+      options:{plugins:{legend:{labels:{color:'#94A3B8',boxWidth:12}}},cutout:'65%'}});
+    const rd = await fetch('/dashboard/regions').then(r=>r.json());
+    const rctx = document.getElementById('regionChart');
+    if (_regionChart) _regionChart.destroy();
+    _regionChart = new Chart(rctx, {type:'bar',
+      data:{labels:Object.keys(rd),
+        datasets:[{label:'Avg Score',data:Object.values(rd).map(v=>v.avg_score),
+          backgroundColor:'#6B21A8',borderRadius:6}]},
+      options:{scales:{
+        y:{beginAtZero:true,max:100,ticks:{color:'#94A3B8'},grid:{color:'#334155'}},
+        x:{ticks:{color:'#94A3B8'},grid:{color:'transparent'}}},
+        plugins:{legend:{display:false}}}});
+  } catch(e) { console.warn('loadHome error',e); }
+}
+
+async function scoreAll() {
+  toast('Scoring all leads…');
+  try {
+    const r = await fetch('/score/all',{method:'POST'}).then(r=>r.json());
+    toast(`✓ Scored ${r.count} leads`);
+    loadHome();
+    if (document.getElementById('page-leads').classList.contains('active')) loadLeads();
+  } catch(e) { toast('Scoring failed',false); }
+}
+
+// ── LEADS TABLE ───────────────────────────────────────────────
+async function loadLeads() {
+  const summ = await fetch('/dashboard/summary').then(r=>r.json()).catch(()=>({total_leads:0}));
+  if (summ.total_leads===0) {
+    document.getElementById('leadsBody').innerHTML =
+      '<tr><td colspan="7" class="empty">No scores yet. Click "Score All Leads".</td></tr>';
+    return;
+  }
+  const r = await fetch('/score/all',{method:'POST'}).then(r=>r.json()).catch(()=>({leads:[]}));
+  renderLeadsTable(r.leads||[]);
+}
+
+function renderLeadsTable(leads) {
+  const tbody = document.getElementById('leadsBody');
+  if (!leads||!leads.length) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty">No leads.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = leads.map(l => {
+    const sc      = getScore(l);
+    const blocked = sc===null||sc===undefined;
+    const prox    = getProxDisplay(l);
+    const flag    = l.anomaly_flag ? '<span class="anomaly-flag" title="Review recommended">⚠</span>' : '';
+    return `
+    <tr class="lead-row" onclick="toggleDetail('${l.account_id}')">
+      <td><strong>${l.company_name||l.account_id}</strong>${flag}
+        <div style="color:var(--muted);font-size:.75rem;">${l.account_id}</div></td>
+      <td>${blocked ? '<span class="badge badge-unfit">BLOCKED</span>' : scoreBadge(sc)}</td>
+      <td>${blocked?'—':(l.icp_fit??'—')}</td>
+      <td>${blocked?'—':(l.intent_score??'—')}</td>
+      <td>${confBadge(getConf(l))}</td>
+      <td style="font-size:.8rem;color:var(--muted);">${prox}</td>
+      <td>${blocked?'<span style="color:var(--red);font-size:.8rem;">Error</span>':actionLabel(l.recommended_action)}</td>
+    </tr>
+    <tr id="detail-${l.account_id}" style="display:none;">
+      <td colspan="7" style="padding:0 12px 16px;">
+        <div class="score-detail open">${renderScoreDetail(l)}</div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function toggleDetail(id) {
+  const r = document.getElementById('detail-'+id);
+  r.style.display = r.style.display==='none' ? 'table-row' : 'none';
+}
+
+function renderScoreDetail(l) {
+  if (l.error) return `<div style="color:var(--red);padding:10px;">
+    <strong>Blocked:</strong> ${l.error}<br>
+    <div style="margin-top:8px;font-size:.82rem;color:var(--muted);">
+    ${(l.anomalies||[]).map(a=>`<div>⚠ [${a.severity}] ${a.rule}: ${a.message}</div>`).join('')}
+    </div></div>`;
+
+  const sc   = getScore(l);
+  const conf = getConf(l);
+  const prox = getProxDisplay(l);
+  const hops = getProxHops(l);
+  const confNote = {
+    HIGH:'Score is well-evidenced.',
+    MEDIUM:`MEDIUM confidence — ±10 band: ${Math.round(sc)-10}–${Math.round(sc)+10}`,
+    LOW:'Score capped at 65 — limited signal data.',
+  }[conf]||'';
+
+  const posRows = (l.positive_signals||[]).map(s=>
+    `<tr><td>${s.factor}</td><td>${s.evidence}</td><td style="color:var(--muted)">${s.source||''}</td></tr>`
+  ).join()||'<tr><td colspan="3" style="color:var(--muted)">No positive signals recorded.</td></tr>';
+
+  const gaps = (l.gaps||[]).map(g=>`<li>${g}</li>`).join('')||'<li style="color:var(--muted)">None</li>';
+  const anoms = (l.anomalies||[]).map(a=>`<div class="badge badge-warn">⚠ ${a.rule}: ${a.message}</div>`).join('');
+
+  return `<div class="score-meta">
+    <div class="metric"><div class="val">${Math.round(sc)}</div><div class="lbl">Score</div></div>
+    <div class="metric"><div class="val">${l.icp_fit??'—'}</div><div class="lbl">ICP Fit</div></div>
+    <div class="metric"><div class="val">${l.intent_score??'—'}</div><div class="lbl">Intent</div></div>
+    <div class="metric"><div class="val">${hops??'—'}</div><div class="lbl">Prox Hops</div></div>
+    <div class="metric"><div class="val">${confBadge(conf)}</div><div class="lbl">Confidence</div></div>
+  </div>
+  <div style="color:var(--muted);font-size:.82rem;margin-bottom:8px;">Network: ${prox}</div>
+  ${confNote?`<div style="color:var(--muted);font-size:.82rem;margin-bottom:10px;">${confNote}</div>`:''}
+  ${anoms?`<div style="margin-bottom:10px;">${anoms}</div>`:''}
+  <table class="ev-table">
+    <thead><tr><th>Factor</th><th>Evidence</th><th>Source</th></tr></thead>
+    <tbody>${posRows}</tbody>
+  </table>
+  <ul class="gaps-list" style="margin-top:12px;"><strong style="color:var(--text);font-size:.82rem;">Gaps:</strong>${gaps}</ul>
+  <div style="margin-top:8px;font-size:.75rem;color:var(--muted);">
+    ICP: ${l.icp_version||'v1.0'} · Scored: ${(l.scored_at||'').slice(0,10)}
+  </div>
+  <div class="detail-actions">
+    <button class="btn btn-green btn-sm" onclick="doOverride('${l.account_id}','approve')">✓ Approve</button>
+    <button class="btn btn-amber btn-sm" onclick="doOverride('${l.account_id}','flag')">⚑ Flag</button>
+    <button class="btn btn-red btn-sm"   onclick="doOverride('${l.account_id}','deprioritize')">↓ Deprioritize</button>
+    <button class="btn btn-ghost btn-sm" onclick="loadOrbitForLead('${l.account_id}')">🔭 View Graph</button>
+  </div>`;
+}
+
+async function doOverride(id, decision) {
+  const reason = prompt(`Reason for "${decision}" on ${id}:`);
+  if (!reason) return;
+  try {
+    await fetch('/override',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({score_id:id,decision,reason,rep_id:'rep_001'})});
+    toast(`✓ Override: ${decision}`);
+  } catch(e) { toast('Override failed',false); }
+}
+
+// ── MANUAL ENTRY ──────────────────────────────────────────────
+async function scoreSingle() {
+  const g = id => document.getElementById(id).value;
+  const p = {
+    account_id:g('f-account_id')||'acc_manual',company_name:g('f-company_name'),
+    industry:g('f-industry'),employee_band:g('f-employee_band'),
+    business_model:g('f-business_model'),geography:g('f-geography'),
+    company_stage:g('f-company_stage'),loan_type:g('f-loan_type'),
+    loan_amount_band:g('f-loan_amount_band'),collateral_type:g('f-collateral_type'),
+    existing_banking_relationship:g('f-existing_banking_relationship'),
+    dscr:parseFloat(g('f-dscr'))||null,
+    debt_to_ebitda_ratio:parseFloat(g('f-debt_to_ebitda_ratio'))||null,
+    years_in_business:parseFloat(g('f-years_in_business'))||null,
+    referred_by_portfolio:g('f-referred_by_portfolio')||'no',
+    shares_guarantor_with_won:'no'
+  };
+  try {
+    const r = await fetch('/score/single',{method:'POST',
+      headers:{'Content-Type':'application/json'},body:JSON.stringify(p)}).then(r=>r.json());
+    document.getElementById('singleResult').innerHTML =
+      `<div class="score-detail open" style="margin-top:16px;">
+        <h3 style="margin-bottom:12px;">Result: ${r.company_name||r.account_id}</h3>
+        ${renderScoreDetail(r)}
+      </div>`;
+  } catch(e) { toast('Score request failed',false); }
+}
+
+// ── KNOWLEDGE GRAPH ───────────────────────────────────────────
+let _brainNet, _pipelineNet, _orbitNet;
+
+function visOpts(physics=true) {
+  return {nodes:{font:{color:'#F1F5F9',size:11},borderWidth:0,size:18},
+    edges:{color:{color:'#475569'},font:{color:'#94A3B8',size:9},
+      arrows:{to:{enabled:true,scaleFactor:.5}},smooth:{type:'dynamic'}},
+    physics:{enabled:physics,stabilization:{iterations:150}},
+    background:{color:'#293548'},interaction:{hover:true}};
+}
+
+function switchGraphTab(tab, el) {
+  document.querySelectorAll('.graph-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.graph-panel').forEach(p=>p.classList.remove('active'));
+  if(el) el.classList.add('active');
+  document.getElementById('gtab-'+tab).classList.add('active');
+  if(tab==='brain')    loadBrain();
+  if(tab==='pipeline') loadPipelineGraph();
+}
+
+async function loadBrain() {
+  try {
+    const d = await fetch('/graph/all').then(r=>r.json());
+    const c = document.getElementById('brainContainer');
+    if(_brainNet) _brainNet.destroy();
+    _brainNet = new vis.Network(c,{nodes:new vis.DataSet(d.nodes),edges:new vis.DataSet(d.edges)},visOpts(true));
+  } catch(e) { console.warn('brain error',e); }
+}
+async function loadPipelineGraph() {
+  try {
+    const d = await fetch('/graph/all').then(r=>r.json());
+    const c = document.getElementById('graphContainer');
+    if(_pipelineNet) _pipelineNet.destroy();
+    _pipelineNet = new vis.Network(c,{nodes:new vis.DataSet(d.nodes),edges:new vis.DataSet(d.edges)},visOpts(true));
+  } catch(e) { console.warn('pipeline error',e); }
+}
+
+async function loadOrbit() {
+  const id = document.getElementById('orbitLeadId').value.trim();
+  if(!id){toast('Enter account ID',false);return;}
+  await _renderOrbit(id);
+}
+function loadOrbitForLead(id) {
+  showPage('graph',null);
+  document.querySelectorAll('.graph-tab')[2].classList.add('active');
+  document.querySelectorAll('.graph-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('gtab-orbit').classList.add('active');
+  document.getElementById('orbitLeadId').value=id;
+  _renderOrbit(id);
+}
+async function _renderOrbit(id) {
+  try {
+    const d = await fetch(`/graph/lead/${id}`).then(r=>r.json());
+    const c = document.getElementById('orbitContainer');
+    const e = document.getElementById('orbitEmpty');
+    if(d.empty_state){e.style.display='block';c.style.display='none';}
+    else {
+      e.style.display='none';c.style.display='block';
+      if(_orbitNet) _orbitNet.destroy();
+      _orbitNet = new vis.Network(c,{nodes:new vis.DataSet(d.nodes),edges:new vis.DataSet(d.edges)},visOpts(false));
+    }
+  } catch(e){toast('Orbit load failed',false);}
+}
+
+// ── GRAPHRAG ──────────────────────────────────────────────────
+async function submitQuery() {
+  const q = document.getElementById('queryInput').value.trim();
+  if(!q) return;
+  const lid = (q.match(/acc_\d+/i)||[''])[0];
+  document.getElementById('queryAnswer').textContent='Retrieving from graph…';
+  document.getElementById('queryResult').style.display='block';
+  document.getElementById('queryPaths').textContent='';
+  try {
+    const r = await fetch('/explain',{method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question:q,lead_id:lid})}).then(r=>r.json());
+    document.getElementById('queryAnswer').innerHTML=
+      `<strong>Answer</strong> <span style="color:var(--muted);font-size:.78rem;">(${r.template||'—'} · ${r.provider||'—'})</span><br><br>${r.answer}`;
+    if(r.paths_used&&r.paths_used.length>0) {
+      document.getElementById('queryPaths').innerHTML='<strong>Graph paths used:</strong><br>'+
+        r.paths_used.map(p=>`<code style="display:block;font-size:.78rem;color:#C4B5FD;margin-top:4px;">${p}</code>`).join('');
+    } else {
+      document.getElementById('queryPaths').textContent='No graph paths (provider=none or no matching nodes).';
+    }
+  } catch(e){document.getElementById('queryAnswer').textContent='Query failed.';}
+}
+
+// ── ICP ENGINE ROOM ───────────────────────────────────────────
+async function loadICP() {
+  try {
+    const d = await fetch('/icp/current').then(r=>r.json());
+    const chip = document.getElementById('icpStatusChip');
+    chip.textContent=d.status; chip.className='state-chip state-'+d.status;
+    document.getElementById('icpVersion').textContent=
+      d.current_version?`Active: ${d.current_version}`:
+      d.pending?`Pending: ${d.pending.version_id}`:'No approved version yet.';
+    renderWeights(d.weights||{});
+  } catch(e){console.warn('ICP error',e);}
+}
+function renderWeights(weights) {
+  const tbody = document.getElementById('weightsBody');
+  const entries = Object.entries(weights).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]));
+  if(!entries.length){tbody.innerHTML='<tr><td colspan="3" class="empty">No weights yet.</td></tr>';return;}
+  const maxW = Math.max(...entries.map(([,v])=>Math.abs(v)));
+  tbody.innerHTML = entries.map(([param,w])=>{
+    const pct = maxW>0?Math.round((Math.abs(w)/maxW)*100):0;
+    return `<tr>
+      <td style="font-family:monospace;font-size:.82rem;">${param}</td>
+      <td style="font-family:monospace;">${w.toFixed(4)}</td>
+      <td><div class="weight-bar"><div class="weight-bar-fill" style="width:${pct}%"></div></div></td>
+    </tr>`;
+  }).join('');
+}
+async function icpSubmit(){
+  const reason=prompt('Reason for submission:')||'Manual submission';
+  try{const r=await fetch('/icp/submit',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({reason})}).then(r=>r.json());
+    toast(`ICP → ${r.status}`);loadICP();}catch(e){toast('Submit failed',false);}
+}
+async function icpApprove(){
+  try{const r=await fetch('/icp/approve',{method:'POST'}).then(r=>r.json());
+    toast(`Approved: ${r.approved_version}`);loadICP();}catch(e){toast('Approve failed',false);}
+}
+async function icpReject(){
+  const reason=prompt('Reason for rejection:')||'No reason given';
+  try{await fetch('/icp/reject',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({reason})});toast('ICP rejected → DRAFT');loadICP();}
+  catch(e){toast('Reject failed',false);}
+}
+
+// ── BACKTEST ──────────────────────────────────────────────────
+async function runBacktest(){
+  const div=document.getElementById('backtestResult');
+  div.innerHTML='<span style="color:var(--muted)">Running…</span>';
+  try{
+    const r=await fetch('/backtest/run',{method:'POST'}).then(r=>r.json());
+    const m=r.metrics||{};
+    div.innerHTML=`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
+      <div class="kpi-card blue" style="padding:14px;">
+        <div class="label">Spearman r</div>
+        <div class="value" style="font-size:1.4rem;">${(m.spearman_r||0).toFixed(3)}</div>
+        <div class="sub">rank correlation</div></div>
+      <div class="kpi-card green" style="padding:14px;">
+        <div class="label">Precision@10</div>
+        <div class="value" style="font-size:1.4rem;">${(m.precision_at_10||0).toFixed(2)}</div>
+        <div class="sub">${Math.round((m.precision_at_10||0)*10)} of top 10 were wins</div></div>
+      <div class="kpi-card purple" style="padding:14px;">
+        <div class="label">Test Set</div>
+        <div class="value" style="font-size:1.4rem;">${m.test_size||'—'}</div>
+        <div class="sub">cutoff ${(r.cutoff_date||'').slice(0,10)}</div></div>
+    </div>
+    <p style="color:var(--muted);font-size:.78rem;margin-top:10px;">${r.disclaimer||''}</p>`;
+  }catch(e){div.innerHTML='<span style="color:var(--red)">Backtest failed.</span>';}
+}
+
+// ── AUDIT LOG ─────────────────────────────────────────────────
+async function loadAudit(){
+  try{
+    const d=await fetch('/audit').then(r=>r.json());
+    const div=document.getElementById('auditEntries');
+    if(!d.entries||!d.entries.length){div.innerHTML='<div class="empty">No entries yet.</div>';return;}
+    div.innerHTML=[...d.entries].reverse().map(e=>`
+      <div class="audit-entry">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:600;">${e.action}</span>
+          <span class="audit-time">${(e.timestamp||'').slice(0,19).replace('T',' ')}</span>
+        </div>
+        <div style="color:var(--muted);margin-top:3px;font-size:.8rem;">
+          ${Object.entries(e).filter(([k])=>!['id','timestamp','action'].includes(k))
+            .map(([k,v])=>`${k}: ${typeof v==='object'?JSON.stringify(v):v}`).join(' · ')}
+        </div>
+      </div>`).join('');
+  }catch(e){console.warn('audit error',e);}
+}
+
+// ── Init ──────────────────────────────────────────────────────
+loadHome();
+</script>
+</body>
+</html>

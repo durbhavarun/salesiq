@@ -1,0 +1,124 @@
+{
+  "status": "DRAFT",
+  "pending": null,
+  "versions": [
+    {
+      "version_id": "v1",
+      "weights": {
+        "industry": {
+          "Professional_Services": -0.0593,
+          "Healthcare": 0.1667,
+          "Retail": 0.0,
+          "Construction": 0.0,
+          "Logistics": -0.0379,
+          "Technology": 0.0316,
+          "Food_Beverage": 0.0,
+          "Manufacturing": 0.226
+        },
+        "employee_band": {
+          "500+": 0.0038,
+          "201-500": -0.0341,
+          "51-200": 0.0366
+        },
+        "geography": {
+          "Midwest": -0.0593,
+          "Northeast": -0.0114,
+          "Southeast": 0.0947,
+          "West": 0.0455,
+          "Southwest": -0.0505
+        },
+        "company_stage": {
+          "startup": -0.2424,
+          "growth": -0.0694,
+          "mature": 0.3182
+        },
+        "business_model": {
+          "B2B": -0.0063
+        },
+        "dscr_band": {
+          "adequate": 0.1376,
+          "strong": 0.2753,
+          "low": -0.4066
+        },
+        "debt_to_ebitda_band": {
+          "high": -0.2942,
+          "moderate": 0.0442,
+          "low": 0.2563
+        },
+        "credit_rating": {
+          "BBB": 0.0518,
+          "AA": 0.072,
+          "B": -0.0972,
+          "BB": -0.0644,
+          "AAA": 0.0025,
+          "A": 0.0606
+        },
+        "collateral_type": {
+          "equipment": 0.3295,
+          "inventory": -0.1313,
+          "receivables": -0.0821,
+          "real_estate": 0.096,
+          "unsecured": 0.0
+        },
+        "years_band": {
+          "established": -0.0139,
+          "startup": 0.0,
+          "mature": 0.0379
+        },
+        "loan_purpose": {
+          "equipment_financing": 0.1515,
+          "refinancing": -0.1199,
+          "acquisition": 0.0745,
+          "expansion": -0.0215,
+          "working_capital": -0.0657
+        },
+        "loan_amount_band": {
+          "1m_5m": -0.0051,
+          "under_1m": -0.072,
+          "5m_20m": 0.0795,
+          "over_20m": 0.0101
+        },
+        "existing_banking_relationship": {
+          "yes": 0.1818,
+          "no": -0.1818
+        },
+        "prior_default_flag": {
+          "no": 0.0442,
+          "yes": -0.0442
+        },
+        "expansion_signal": {
+          "no": 0.0215,
+          "yes": -0.0215
+        },
+        "equipment_purchase_signal": {
+          "yes": 0.1515,
+          "no": -0.1515
+        },
+        "headcount_growth_signal": {
+          "no": 0.0366,
+          "yes": -0.0366
+        },
+        "revenue_growth_signal": {
+          "no": 0.0694,
+          "yes": -0.0694
+        },
+        "new_contract_signal": {
+          "no": -0.0745,
+          "yes": 0.0745
+        },
+        "prior_deal_with_bank": {
+          "yes": 0.1818,
+          "no": -0.1818
+        },
+        "referral_source_quality": {
+          "high": 0.1919,
+          "low": 0.0682
+        }
+      },
+      "submitted_at": "2026-08-11T20:48:10.289753+00:00",
+      "reason": "test",
+      "approved_at": "2026-08-11T20:48:10.296613+00:00"
+    }
+  ],
+  "current_version": "v1"
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "9582ede7-ab72-469a-8429-2906559f5a1a",
+    "timestamp": "2026-08-11T20:48:10.028213+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  },
+  {
+    "id": "7d5b9fac-0d74-47e3-83b2-e37f2fb7f7ee",
+    "timestamp": "2026-08-11T20:48:10.058708+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  },
+  {
+    "id": "82fecdfc-615d-465a-bb4b-e37cad5f184f",
+    "timestamp": "2026-08-11T20:48:10.096905+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  },
+  {
+    "id": "f133aa74-4e1e-4e88-93ea-6f293274563d",
+    "timestamp": "2026-08-11T20:48:10.136142+00:00",
+    "action": "score_single",
+    "account_id": "acc_manual_001"
+  },
+  {
+    "id": "baf1b2be-d56a-4b55-bd72-625e0142fd6c",
+    "timestamp": "2026-08-11T20:48:10.158210+00:00",
+    "action": "score_single",
+    "account_id": "acc_bad_dscr"
+  },
+  {
+    "id": "4f7c5ebb-d983-4d17-8a9a-fc8d26ec10af",
+    "timestamp": "2026-08-11T20:48:10.188633+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  },
+  {
+    "id": "a6cf8036-ef25-47b4-a4d3-7be0b2d4b2ba",
+    "timestamp": "2026-08-11T20:48:10.231835+00:00",
+    "action": "backtest_run",
+    "spearman_r": 0.4912,
+    "precision_at_10": 0.6
+  },
+  {
+    "id": "706d957c-a804-400d-9984-dae0cb16c540",
+    "timestamp": "2026-08-11T20:48:10.259527+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  },
+  {
+    "id": "25fdad75-6996-433e-8c67-f97a3b4282a8",
+    "timestamp": "2026-08-11T20:48:10.290315+00:00",
+    "action": "icp_submit",
+    "version_id": "v1",
+    "reason": "test"
+  },
+  {
+    "id": "9514c508-54d8-4954-8f93-9d815790391a",
+    "timestamp": "2026-08-11T20:48:10.297477+00:00",
+    "action": "icp_approve",
+    "version_id": "v1"
+  },
+  {
+    "id": "6f236fa5-c0db-4708-8e4c-ba89a7f8bc20",
+    "timestamp": "2026-08-11T20:48:10.318796+00:00",
+    "action": "icp_submit",
+    "version_id": "v2",
+    "reason": "reject test"
+  },
+  {
+    "id": "776fcd04-c4bf-454b-80aa-b5cfd4c7821b",
+    "timestamp": "2026-08-11T20:48:10.322698+00:00",
+    "action": "icp_reject",
+    "version_id": "v2",
+    "reason": "test"
+  },
+  {
+    "id": "dd9ce15a-5d77-44d7-862f-fee6c887341b",
+    "timestamp": "2026-08-11T20:48:10.348678+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  },
+  {
+    "id": "a1495e36-d5bf-4df3-a9bf-458cc37fee9b",
+    "timestamp": "2026-08-11T20:48:10.357980+00:00",
+    "action": "override",
+    "score_id": "acc_201",
+    "decision": "approve",
+    "rep_id": "rep_001"
+  },
+  {
+    "id": "d2ce5377-70ed-4b95-920f-1f0f7edd2417",
+    "timestamp": "2026-08-11T20:48:10.387402+00:00",
+    "action": "score_all",
+    "lead_count": 25
+  }
+]

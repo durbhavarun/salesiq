@@ -1,0 +1,18 @@
+# render.yaml — Render.com deployment config
+# Free tier: web service, no Docker needed for memory-backend mode.
+
+services:
+  - type: web
+    name: salesiq
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python graph/populate.py
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SALESIQ_LLM_PROVIDER
+        value: groq
+      - key: SALESIQ_GRAPH_BACKEND
+        value: memory
+      - key: GROQ_API_KEY
+        sync: false   # Set manually in Render dashboard — never commit key
+      - key: GROQ_MODEL
+        value: llama3-8b-8192
